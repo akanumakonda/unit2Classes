@@ -8,6 +8,7 @@ public class AvgOfThree
        double a, b, c;
 
       System.out.print ("Enter the first number: ");
+      // Have to print a prompt before you can use the scanner object
       a = s.nextDouble();
 
       System.out.print ("Enter the second number: ");
