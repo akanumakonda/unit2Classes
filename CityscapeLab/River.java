@@ -6,34 +6,36 @@ import java.awt.Color;
 
 
 /**
- * Write a description of class Building here.
+ * Write a description of class River here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Building
+public class River
 {
     /** description of instance variable x (add comment for each instance variable) */
     private int xLeft;
     private int yTop;
     private int inwidth;
     private int inheight;
+    private String type;
 
     /**
-     * Default constructor for objects of class Building
+     * Default constructor for objects of class River
      */
-    public Building(int x, int y, int width, int height )
+    public River(int x, int y, int width, int height, String roadriver)
     {
         // initialise instance variables
         this.xLeft = x;
         this.yTop = y;
         this.inwidth = width;
         this.inheight = height;
-        
+        this.type = roadriver;
     }
 
     /**
-     * An example of a method - Draws a Building
+     * An example of a method - replace this comment with your own
+     *    that describes the operation of the method
      *
      * @pre        preconditions for the method
      *            (what the method assumes about the method's parameters and class's state)
@@ -45,27 +47,17 @@ public class Building
     public void draw(Graphics2D g2)
     {
         // put your code here
-        Rectangle tower = new Rectangle(xLeft,yTop, inwidth, inheight);
-        g2.draw(tower);
-        g2.setColor(Color.DARK_GRAY);
-        g2.fill(tower);
-        /*int countery = ;
-        int counterx = inwidth;
-        
-        while (counterx >= (inwidth / 40))
+        Rectangle river = new Rectangle( xLeft, yTop, inwidth, inheight);
+        g2.draw(river);
+        if (type != "River")
         {
-            while countery >= (inheight / 50)
-            {
-            counter -= 10;
-            counter
-            Rectangle window = new Rectangle( (counter), (counter), 20, 20);
-            g2.draw(window);
-            g2.setColor(Color.LIGHT_GRAY);
-            g2.fill(window);
+        g2.setColor(Color.BLUE);
+    }
+        else
+        {
+            g2.setColor(Color.BLACK);
         }
-        }
-        */
-
+        g2.fill(river);
     }
 
 }
