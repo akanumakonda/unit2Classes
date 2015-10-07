@@ -49,15 +49,14 @@ public class River
         // put your code here
         Rectangle river = new Rectangle( xLeft, yTop, inwidth, inheight);
         g2.draw(river);
-        if (type != "River")
-        {
+      if (type == "River")
+      {
         g2.setColor(Color.BLUE);
+       }
+      else
+      {
+        g2.setColor(Color.BLACK);
+       }
+       g2.fill(river);
     }
-        else
-        {
-            g2.setColor(Color.BLACK);
-        }
-        g2.fill(river);
-    }
-
 }

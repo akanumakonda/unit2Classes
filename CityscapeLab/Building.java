@@ -49,22 +49,24 @@ public class Building
         g2.draw(tower);
         g2.setColor(Color.DARK_GRAY);
         g2.fill(tower);
-        /*int countery = ;
-        int counterx = inwidth;
+        int counter = inheight;
+        int numwindow = 32;
         
-        while (counterx >= (inwidth / 40))
+        while (counter > 100)
         {
-            while countery >= (inheight / 50)
             {
-            counter -= 10;
-            counter
-            Rectangle window = new Rectangle( (counter), (counter), 20, 20);
-            g2.draw(window);
+            counter -= 40;
+            Rectangle window1 = new Rectangle( xLeft + 10, yTop + numwindow, 20, 20);
+            Rectangle window2 = new Rectangle( xLeft + 40, yTop + numwindow, 20, 20);
+            g2.draw(window1);
+            g2.draw(window2);
             g2.setColor(Color.LIGHT_GRAY);
-            g2.fill(window);
+            g2.fill(window1);
+            g2.fill(window2);
+            numwindow += 40;
         }
         }
-        */
+
 
     }
 

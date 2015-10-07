@@ -2,6 +2,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
 import java.util.Scanner;
+
+
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
  *  cityscape to these object.
@@ -13,18 +15,17 @@ public class CityscapeComponent extends JComponent
 {
     // define the objects in your Cityscape as instance variables
     // ...
-    Building building1 = new Building(0,0, 100, 300);
-    Building building2 = new Building(700, 0 , 100, 300);
-    River river = new River ( 0, 350 , 800, 300, "Road");
-    //Scanner s = new Scanner(System.in);
-    //System.out.println("Please enter whether you want a River or a Road");
-    //String type = s.next();
-    Sidewalk walk = Sidewalk( 0,350,800, 0 );
-    
-    
+    private String type;
+    //     Building building1 = new Building(0,100, 100, 300);
+    //     Building building2 = new Building(700, 100 , 100, 300);
+    Sun sun = new Sun(500, 100);
+   
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
-    
+    public CityscapeComponent( String rivertype)
+    {
+        this.type = rivertype;
+    }
     
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
@@ -34,10 +35,14 @@ public class CityscapeComponent extends JComponent
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
+        Building building1 = new Building(0,100, 100, 300);
+        Building building2 = new Building(700, 100 , 100, 300);
+        Sun sun = new Sun(500, 100);
         building1.draw(g2);
         building2.draw(g2);
+        River river = new River ( 0, 350 , 800, 300, type);
         river.draw(g2);
-        walk.draw(g2);
+        sun.draw(g2);
         // invoke the draw method on each object in your Cityscape
         // ...
         
@@ -52,7 +57,7 @@ public class CityscapeComponent extends JComponent
     {
         // update the objects in the cityscape so they are animated
         // ...
-        
+        sun.move();
         
         
         // request that the Java Runtime repaints this component by invoking its paintComponent method
