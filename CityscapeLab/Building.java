@@ -8,8 +8,8 @@ import java.awt.Color;
 /**
  * Write a description of class Building here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Anusha Anumakonda) 
+ * @version (10/11/15)
  */
 public class Building
 {
@@ -35,12 +35,11 @@ public class Building
     /**
      * An example of a method - Draws a Building
      *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
+
+     * @post    instantiates a Building object
+     * 
+     * @param    g2    Graphics Object
+     * 
      */
     public void draw(Graphics2D g2)
     {
